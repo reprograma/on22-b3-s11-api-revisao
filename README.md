@@ -303,8 +303,8 @@ O Postman é uma ferramenta que dá suporte à documentação das requisições 
 ***
 
 ### Exercícios 
-* [Exercicio para sala](https://github.com/mflilian/repo-example/tree/main/exercicios/para-sala)
-* [Exercicio para casa](https://github.com/mflilian/repo-example/tree/main/exercicios/para-casa)
+* [Exercicio para sala](https://github.com/reprograma/on22-b3-s11-api-revisao/tree/main/exercicios/para-sala)
+* [Exercicio para casa](https://github.com/reprograma/on22-b3-s11-api-revisao/tree/main/exercicios/para-casa)
 
 
 ***
