@@ -2,7 +2,7 @@
   <img src="assets/reprograma-fundos-claros.png" alt="logo reprograma" width="500">
 </h1>
 
-<h1 align="center"> Revisão + Exercícios: GET + POST + PUT + PATCH + DELETE
+<h1 align="center"> Revisão + Exercícios: GET + POST + PUT + PATCH + DELETE </h1>
 
 Turma Online 22 - B3 | Back-end | Semana 11 | 2023 | Professora Camila Ribeiro
 
