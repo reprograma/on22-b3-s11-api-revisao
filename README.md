@@ -2,7 +2,7 @@
   <img src="assets/reprograma-fundos-claros.png" alt="logo reprograma" width="500">
 </h1>
 
-# Revisão + Exercícios: GET + POST + PUT + PATCH + DELETE
+<h1 align="center"> Revisão + Exercícios: GET + POST + PUT + PATCH + DELETE
 
 Turma Online 22 - B3 | Back-end | Semana 11 | 2023 | Professora Camila Ribeiro
 
@@ -24,10 +24,6 @@ Mas por onde começamos? Antes de mergulharmos de cabeça no projeto, vamos rele
 O que veremos na aula de hoje?
 
 
-
-
-- [Revisão + Exercícios: GET + POST + PUT + PATCH + DELETE](#revisão--exercícios-get--post--put--patch--delete)
-    - [Instruções](#instruções)
 - [Introdução](#introdução)
     - [Resumo](#resumo)
   - [Métodos HTTP e o CRUD](#métodos-http-e-o-crud)
@@ -102,9 +98,9 @@ Eles são divididos em 5 grupos:
 | `4xx` | Erros do cliente: há algum erro da sua parte. |
 | `5xx` | Erros do servidor: há algum erro no lado do servidor. |
 
-> Para as maes de CATs [Clica aqui <](https://http.cat/)
+> Para as maes de CATs [Clica aqui 🐱](https://http.cat/)
 
-> Para as maes de DOGs [Clica aqui <](https://httpstatusdogs.com)
+> Para as maes de DOGs [Clica aqui 🐶](https://httpstatusdogs.com)
 
 ### CRUD
 O CRUD é um sigla usado para descrever as quatro principais operações básicas que podem ser realizadas em um sistema de gerenciamento de banco de dados ou em um aplicativo que lida com dados persistentes. Essas operações são:
@@ -246,7 +242,9 @@ reiniciando automaticamente o servidor. Ele fica monitorando a aplicação em No
 <p align="center">
 <img src= "https://github.com/camisarp/Tres-Patas/assets/84551213/f3ecca93-a92d-4423-a4d0-d78cbee37886" width="60%" height="50%"/>
 </p>
+
 ***
+  
 ### Promise
 A Promise realiza processamentos e tratamentos de eventos ou ações assíncronas. Esse objeto guarda um valor que pode estar disponível agora, no futuro ou nunca. Isso permite o tratamento de eventos ou ações que acontecem de forma assíncrona em casos de sucessos ou falhas.
 
@@ -301,6 +299,7 @@ O Postman é uma ferramenta que dá suporte à documentação das requisições 
 <p align="center">
 <img src= "https://github.com/camisarp/Tres-Patas/assets/84551213/1f2a51b2-4ca4-4885-8bd0-0b1ff4c560fd" width="60%" height="50%"/>
 </p>
+
 ***
 
 ### Exercícios 
