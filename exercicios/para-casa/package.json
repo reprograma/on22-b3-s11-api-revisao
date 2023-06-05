@@ -1,0 +1,33 @@
+{
+  "name": "week-11-api",
+  "version": "1.0.0",
+  "description": "home exercise, API development",
+  "main": "./API/app/app.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nearlyerika/on22-b3-s11-api-revisao.git"
+  },
+  "keywords": [
+    "Javascript",
+    "Node",
+    "express",
+    "API",
+    "RESTful",
+    "MVC"
+  ],
+  "author": "nearlyerika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nearlyerika/on22-b3-s11-api-revisao/issues"
+  },
+  "homepage": "https://github.com/nearlyerika/on22-b3-s11-api-revisao#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
