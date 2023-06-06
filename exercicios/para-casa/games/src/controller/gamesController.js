@@ -31,7 +31,7 @@ const registerGame = (req, res) => {
   }]);
 }
 
-const updateGameById = (req, res) => {
+const updatePut = (req, res) => {
   const id = req.params.id;
   let gameRequest = req.body;
   let findGame = gamesJson.findIndex(game => game.id == id);
@@ -41,9 +41,33 @@ const updateGameById = (req, res) => {
   }]);
 }
 
+// const updatePatchLiked = (req, res) => {
+//   const id = req.params.id;
+//   let newLiked = req.body.liked;
+//   let findLiked = gamesJson.find(game => game.id == id);
+
+//   findLiked.liked = newLiked;
+//   res.status(200).json([{
+//     "message": "Successfully updated liked.", findLiked
+//   }]);
+// }
+
+const deleteGameById = (req, res) => {
+  const id = req.params.id;
+  const deleteGame = gamesJson.findIndex(game => game.id == id);
+  gamesJson.splice(deleteGame, 1);
+  res.status(200).json([{
+    "message": "Deleted game",
+    "Deleted": id,
+    gamesJson
+  }]);
+}
+
 module.exports = {
 	getAllGames,
   getGamesById,
   registerGame,
-  updateGameById
+  updatePut,
+  // updatePatchLiked
+  deleteGameById
 }
