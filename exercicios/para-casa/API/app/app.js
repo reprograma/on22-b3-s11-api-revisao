@@ -12,3 +12,6 @@ app
 
 // EXPORTS
 module.exports = app;
+
+// EXPORTS
+module.exports = app
