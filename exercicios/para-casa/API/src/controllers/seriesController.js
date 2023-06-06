@@ -6,7 +6,22 @@ const fs = require('fs')
 
 const postSeries = (req, res) => {};
 
-const getSeriesByID = (req, res) => {};
+const getSeriesByID = (req, res) => {
+try {
+  const idRequest = req.params.id;
+  const seriesData = series.find((series) => series.id === idRequest);
+
+  res.status(200).json({
+    status: 'success',
+    data: { seriesData },
+  });
+} catch (error) {
+  res.status(500).json({
+    status: 'error',
+    message: `There was an error: ${err}`,
+  });
+}
+};
 
 const getAllSeries = (req, res) => {
     try {
