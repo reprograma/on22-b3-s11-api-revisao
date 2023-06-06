@@ -31,10 +31,19 @@ const registerGame = (req, res) => {
   }]);
 }
 
-
+const updateGameById = (req, res) => {
+  const id = req.params.id;
+  let gameRequest = req.body;
+  let findGame = gamesJson.findIndex(game => game.id == id);
+  gamesJson.splice(findGame, 1, gameRequest);
+  res.status(200).json([{
+    "message": "Successfully updated game.", gamesJson
+  }]);
+}
 
 module.exports = {
 	getAllGames,
   getGamesById,
-  registerGame
+  registerGame,
+  updateGameById
 }
