@@ -1,5 +1,6 @@
 // IMPORTS
 const series = require('../models/series.json');
+const fs = require('fs')
 
 // METHODS
 

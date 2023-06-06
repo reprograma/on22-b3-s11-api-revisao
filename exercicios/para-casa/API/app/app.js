@@ -10,13 +10,5 @@ app
   .use('/api', gamesRouter)
   .use('/api', seriesRouter);
 
-app
-  .use(express.json())
-  .use('/api', gamesRouter)
-  .use('/api', seriesRouter);
-
-// EXPORTS
-module.exports = app;
-
 // EXPORTS
 module.exports = app;
