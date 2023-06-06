@@ -41,16 +41,22 @@ const updatePut = (req, res) => {
   }]);
 }
 
-// const updatePatchLiked = (req, res) => {
-//   const id = req.params.id;
-//   let newLiked = req.body.liked;
-//   let findLiked = gamesJson.find(game => game.id == id);
+const updatePatchLiked = (req, res) => {
+  const id = req.params.id;
+  let newLiked = req.body.liked;
+  let findLiked = gamesJson.find((game) => game.id == id);
 
-//   findLiked.liked = newLiked;
-//   res.status(200).json([{
-//     "message": "Successfully updated liked.", findLiked
-//   }]);
-// }
+  if (findLiked) {
+    findLiked.liked = newLiked;
+    res.status(200).json([{
+    "message": "Successfully updated liked.", findLiked
+  }]);
+  } else {
+    res.status(404).json([{
+      "message": "Updated liked nor found"
+    }]);
+  }
+}
 
 const deleteGameById = (req, res) => {
   const id = req.params.id;
@@ -68,6 +74,6 @@ module.exports = {
   getGamesById,
   registerGame,
   updatePut,
-  // updatePatchLiked
+  updatePatchLiked,
   deleteGameById
 }
