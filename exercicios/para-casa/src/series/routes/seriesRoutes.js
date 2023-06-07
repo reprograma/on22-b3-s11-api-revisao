@@ -3,14 +3,14 @@ const { getAllSeries, getSerieByID, likeSerie, deleteSerieByID, addSerie, getSer
 
 const routerSeries = express.Router();
 
-routerSeries.get('/all', getAllSeries);
-routerSeries.get('/genero', getSeriesByGenre);
-routerSeries.get('/:id', getSerieByID);
+routerSeries.get('/all', getAllSeries); //ok
+routerSeries.get('/genero', getSeriesByGenre); //ok
+routerSeries.get('/:id', getSerieByID); //ok
 
-routerSeries.patch('/like', likeSerie);
+routerSeries.patch('/:id/like', likeSerie); //ok
 
-routerSeries.post('/newserie', addSerie);
-routerSeries.delete('/:id', deleteSerieByID);
+routerSeries.post('/newserie', addSerie); //ok
+routerSeries.delete('/:id', deleteSerieByID); //ok
 
 
 module.exports = routerSeries;
