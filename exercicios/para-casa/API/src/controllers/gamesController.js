@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 // CONFIG
-const gamesFilePath = '../models/games.json';
+const gamesFilePath = path.join(__dirname, '../models/games.json');
 
 const errorResponse = (res, statusCode, message) => {
   return res.status(statusCode).json({

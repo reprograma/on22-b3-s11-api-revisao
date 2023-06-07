@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 // CONFIG
-const seriesFilePath = '../models/series.json';
+const seriesFilePath = path.join(__dirname, '../models/series.json');
 
 const errorResponse = (res, statusCode, message) => {
   return res.status(statusCode).json({
@@ -70,10 +70,10 @@ const getSeriesByID = (req, res) => {
 // GET  ////////////////////////////////////////////////////////////////
 const getSeriesByGenre = (req, res) => {
   try {
-    const genreRequest = req.query.genero.tolowerCase();
+    const genreRequest = req.query.genre.toLowerCase();
 
-    const filteredSeries = series.filter((serie) =>
-      serie.genres.tolowerCase().includes(genreRequest),
+    const filteredSeries = series.filter((series) =>
+      series.genre.toLowerCase().includes(genreRequest),
     );
 
     res.status(200).json({
@@ -90,7 +90,7 @@ const getSeriesByGenre = (req, res) => {
 const updateSeries = (req, res) => {
   try {
     const idRequest = req.params.id;
-    const gameRequest = req.body;
+    const seriesRequest = req.body;
 
     const indexToUpdate = series.findIndex(
       (series) => series.id == idRequest

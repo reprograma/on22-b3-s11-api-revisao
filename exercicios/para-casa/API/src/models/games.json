@@ -19,5 +19,54 @@
     "launchYear": "1999",
     "consoles": ["nintendo64", "nintendoSwitch"],
     "liked": true
+  },
+  {
+    "id": 4,
+    "title": "Grand Theft Auto V",
+    "launchYear": "2013",
+    "consoles": ["ps4", "xboxOne", "pc"],
+    "liked": true
+  },
+  {
+    "id": 5,
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "launchYear": "2017",
+    "consoles": ["nintendoSwitch"],
+    "liked": true
+  },
+  {
+    "id": 6,
+    "title": "Celeste",
+    "launchYear": "2018",
+    "consoles": ["pc", "Nintendo Switch", "ps4", "Xbox One"],
+    "liked": true
+  },
+  {
+    "id": 7,
+    "title": "Minecraft",
+    "launchYear": "2011",
+    "consoles": ["pc", "ps4", "xboxOne", "nintendoSwitch"],
+    "liked": true
+  },
+  {
+    "id": 8,
+    "title": "The Last of Us Part II",
+    "launchYear": "2020",
+    "consoles": ["ps4", "ps5"],
+    "liked": true
+  },
+  {
+    "id": 9,
+    "title": "Undertale",
+    "launchYear": "2015",
+    "consoles": ["pc", "nintendoSwitch"],
+    "liked": true
+  },
+  {
+    "id": 10,
+    "title": "Final Fantasy VII Remake",
+    "launchYear": "2020",
+    "consoles": ["ps4", "ps5"],
+    "liked": true
   }
 ]
