@@ -1,54 +1,167 @@
 // IMPORTS
 const series = require('../models/series.json');
-const fs = require('fs')
+const path = require('path');
+const fs = require('fs');
 
-// METHODS
+// CONFIG
+const seriesFilePath = path.join(__dirname, '../models/series.json');
 
-const postSeries = (req, res) => {};
-
-const getSeriesByID = (req, res) => {
-try {
-  const idRequest = req.params.id;
-  const seriesData = series.find((series) => series.id === idRequest);
-
-  res.status(200).json({
-    status: 'success',
-    data: { seriesData },
-  });
-} catch (error) {
-  res.status(500).json({
+const errorResponse = (res, statusCode, message) => {
+  return res.status(statusCode).json({
     status: 'error',
-    message: `There was an error: ${err}`,
+    message: message,
   });
-}
 };
 
-const getAllSeries = (req, res) => {
-    try {
-    res.status(200).json({
-      status: "success",
-      data: {series}
-    })
-  } catch {
-    res.status(500).json({
-      status: "error",
-      message: "There was an error! :("
-    })
+// POST  ////////////////////////////////////////////////////////////////
+const postSeries = (req, res) => {
+  try {
+    const newId = series[series.length - 1].id + 1;
+    const newSeries = Object.assign({ id: newId }, req.body);
+
+    series.push(newSeries);
+    fs.writeFile(seriesFilePath, JSON.stringify(series), () => {
+      res.status(201).json({
+        status: 'success',
+        data: { series },
+      });
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
   }
 };
 
-const getSeriesGenre = (req, res) => {};
+// GET  ////////////////////////////////////////////////////////////////
+const getSeriesByID = (req, res) => {
+  try {
+    const idRequest = req.params.id;
+    const seriesData = series.find(
+      (series) => series.id == idRequest
+    );
 
-const deleteSeries = (req, res) => {};
+    if (!seriesData) {
+      return errorResponse(res, 404, 'Not found');
+    }
 
-const patchLike = (req, res) => {};
+    res.status(200).json({
+      status: 'success',
+      data: { seriesData },
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
+  }
+};
+
+// GET  ////////////////////////////////////////////////////////////////
+const getAllseries = (req, res) => {
+  try {
+    res.status(200).json({
+      status: 'success',
+      data: { series },
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
+  }
+};
+
+// PUT  ////////////////////////////////////////////////////////////////
+const updateSeries = (req, res) => {
+  try {
+    const idRequest = req.params.id;
+    const gameRequest = req.body;
+
+    const indexToUpdate = series.findIndex(
+      (series) => series.id == idRequest
+    );
+
+    if (indexToUpdate == -1) {
+      return errorResponse(res, 404, 'Not found');
+    }
+
+    series[indexToUpdate] = {
+      ...series[indexToUpdate],
+      ...seriesRequest,
+    };
+
+    fs.writeFile(seriesFilePath, JSON.stringify(series), () => {
+      res.status(200).json({
+        status: 'success',
+        message: 'Updated successfully',
+        data: { series: series[indexToUpdate] },
+      });
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
+  }
+};
+
+// PATCH  ////////////////////////////////////////////////////////////////
+const patchLike = (req, res) => {
+  try {
+    const idRequest = req.params.id;
+    const { liked } = req.body;
+
+    const indexToUpdate = series.findIndex(
+      (series) => series.id == idRequest
+    );
+
+    if (indexToUpdate == -1) {
+      return errorResponse(res, 404, 'Not found');
+    }
+
+    series[indexToUpdate].liked = liked;
+
+    fs.writeFile(seriesFilePath, JSON.stringify(series), () => {
+      res.status(200).json({
+        status: 'success',
+        message: 'Updated successfully',
+        data: { series: series[indexToUpdate] },
+      });
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
+  }
+};
+
+// DELETE  ////////////////////////////////////////////////////////////////
+const deleteSeries = (req, res) => {
+  try {
+    const idRequest = req.params.id;
+
+    const indexToDelete = series.findIndex(
+      (series) => series.id == idRequest
+    );
+
+    if (indexToDelete == -1) {
+      return errorResponse(res, 404, 'Not found');
+    }
+
+    const deletedSeries = series.splice(indexToDelete, 1);
+
+    fs.writeFile(seriesFilePath, JSON.stringify(series), () => {
+      res.status(200).json({
+        status: 'success',
+        message: 'Deleted successfully',
+        data: { series: deletedSeries },
+      });
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
+  }
+};
 
 // EXPORTS
 module.exports = {
   postSeries,
   getSeriesByID,
-  getAllSeries,
-  getSeriesGenre,
+  getAllseries,
+  updateSeries,
   deleteSeries,
   patchLike,
 };

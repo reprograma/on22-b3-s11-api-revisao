@@ -1,51 +1,58 @@
 // IMPORTS
 const games = require('../models/games.json');
+const path = require('path');
 const fs = require('fs');
 
-// METHODS
+// CONFIG
+const gamesFilePath = path.join(__dirname, '../models/games.json');
 
+const errorResponse = (res, statusCode, message) => {
+  return res.status(statusCode).json({
+    status: 'error',
+    message: message,
+  });
+};
+
+// POST  ////////////////////////////////////////////////////////////////
 const postGame = (req, res) => {
   try {
     const newId = games[games.length - 1].id + 1;
     const newGame = Object.assign({ id: newId }, req.body);
 
     games.push(newGame);
-    fs.writeFile(
-      './API/src/models/games.json',
-      JSON.stringify(games),
-      () => {
-        res.status(201).json({
-          status: 'success',
-          data: {games},
-        });
-      }
-    );
+    fs.writeFile(gamesFilePath, JSON.stringify(games), () => {
+      res.status(201).json({
+        status: 'success',
+        data: { games },
+      });
+    });
   } catch (err) {
     console.log(err);
-    res.status(500).json({
-      status: 'error',
-      message: `There was an error: ${err}`,
-    });
+    errorResponse(res, 500, `There was an error: ${err}`);
   }
 };
 
+// GET  ////////////////////////////////////////////////////////////////
 const getGameByID = (req, res) => {
   try {
-    const idRequest = +req.params.id;
-    const gameData = games.find((game) => game.id === idRequest);
+    const idRequest = req.params.id;
+    const gameData = games.find((game) => game.id == idRequest);
+
+    if (!gameData) {
+      return errorResponse(res, 404, 'Game not found');
+    }
 
     res.status(200).json({
       status: 'success',
       data: { gameData },
     });
   } catch (err) {
-    res.status(500).json({
-      status: 'error',
-      message: `There was an error: ${err}`,
-    });
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
   }
 };
 
+// GET  ////////////////////////////////////////////////////////////////
 const getAllGames = (req, res) => {
   try {
     res.status(200).json({
@@ -53,64 +60,99 @@ const getAllGames = (req, res) => {
       data: { games },
     });
   } catch (err) {
-    res.status(500).json({
-      status: 'error',
-      message: `There was an error: ${err}`,
-    });
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
   }
 };
 
-const updateGame = async (req, res) => {
+// PUT  ////////////////////////////////////////////////////////////////
+const updateGame = (req, res) => {
   try {
     const idRequest = req.params.id;
     const gameRequest = req.body;
 
-    const updateIndex = games.findIndex(
-      (game) => game.id === idRequest
+    const indexToUpdate = games.findIndex(
+      (game) => game.id == idRequest
     );
-    if (updateIndex === -1) {
-      return res
-        .status(404)
-        .json({ status: 'error', message: 'Game not found' });
+
+    if (indexToUpdate == -1) {
+      return errorResponse(res, 404, 'Game not found');
     }
 
-    games[updateIndex] = { ...games[updateIndex], ...gameRequest };
+    games[indexToUpdate] = {
+      ...games[indexToUpdate],
+      ...gameRequest,
+    };
 
-    await fs.promises.writeFile(
-      '../models/games.json',
-      JSON.stringify(games),
-      (err) => {
-        if (err) {
-          return res
-            .status(500)
-            .json({
-              status: 'error',
-              message: `There was an error: ${err}`,
-            });
-        }
-
-        res
-          .status(200)
-          .json({
-            status: 'success',
-            message: 'Game updated successfully',
-            data: games[updateIndex],
-          });
-      }
-    );
-  } catch (err) {
-    res
-      .status(500)
-      .json({
-        status: 'error',
-        message: `There was an error: ${err}`,
+    fs.writeFile(gamesFilePath, JSON.stringify(games), () => {
+      res.status(200).json({
+        status: 'success',
+        message: 'Game updated successfully',
+        data: { game: games[indexToUpdate] },
       });
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
   }
 };
 
-const deleteGame = (req, res) => {};
+// PATCH  ////////////////////////////////////////////////////////////////
+const patchLike = (req, res) => {
+  try {
+    const idRequest = req.params.id;
+    const { liked } = req.body;
 
-const patchLike = (req, res) => {};
+    const indexToUpdate = games.findIndex(
+      (game) => game.id == idRequest
+    );
+
+    if (indexToUpdate == -1) {
+      return errorResponse(res, 404, 'Game not found');
+    }
+
+    games[indexToUpdate].liked = liked;
+
+    fs.writeFile(gamesFilePath, JSON.stringify(games), () => {
+      res.status(200).json({
+        status: 'success',
+        message: 'Updated successfully',
+        data: { game: games[indexToUpdate] },
+      });
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
+  }
+};
+
+// DELETE  ////////////////////////////////////////////////////////////////
+const deleteGame = (req, res) => {
+  try {
+    const idRequest = req.params.id;
+
+    const indexToDelete = games.findIndex(
+      (game) => game.id == idRequest
+    );
+
+    if (indexToDelete == -1) {
+      return errorResponse(res, 404, 'Game not found');
+    }
+
+    const deletedGame = games.splice(indexToDelete, 1);
+
+    fs.writeFile(gamesFilePath, JSON.stringify(games), () => {
+      res.status(200).json({
+        status: 'success',
+        message: 'Game deleted successfully',
+        data: { game: deletedGame },
+      });
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
+  }
+};
 
 // EXPORTS
 module.exports = {
