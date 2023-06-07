@@ -1,9 +1,6 @@
 const { resolve } = require('path');
 const gamesJson = require('../models/games.json');
 const fs = require('fs');
-const path = require('path');
-
-
 
 const getAllGames = (req, res) => {
     try {
