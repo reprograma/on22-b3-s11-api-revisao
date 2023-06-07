@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 // CONFIG
-const gamesFilePath = path.join(__dirname, '../models/games.json');
+const gamesFilePath = '../models/games.json';
 
 const errorResponse = (res, statusCode, message) => {
   return res.status(statusCode).json({
@@ -17,14 +17,27 @@ const errorResponse = (res, statusCode, message) => {
 const postGame = (req, res) => {
   try {
     const newId = games[games.length - 1].id + 1;
-    const newGame = Object.assign({ id: newId }, req.body);
+    const newGame = Object.assign({id: newId}, req.body);
 
     games.push(newGame);
     fs.writeFile(gamesFilePath, JSON.stringify(games), () => {
       res.status(201).json({
         status: 'success',
-        data: { games },
+        data: {games},
       });
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
+  }
+};
+
+// GET  ////////////////////////////////////////////////////////////////
+const getAllGames = (req, res) => {
+  try {
+    res.status(200).json({
+      status: 'success',
+      data: {games},
     });
   } catch (err) {
     console.log(err);
@@ -44,7 +57,7 @@ const getGameByID = (req, res) => {
 
     res.status(200).json({
       status: 'success',
-      data: { gameData },
+      data: {gameData},
     });
   } catch (err) {
     console.log(err);
@@ -53,11 +66,19 @@ const getGameByID = (req, res) => {
 };
 
 // GET  ////////////////////////////////////////////////////////////////
-const getAllGames = (req, res) => {
+const getGameByConsole = (req, res) => {
   try {
+    const consoleRequest = req.query.console.toLowerCase();
+
+    const filteredGames = games.filter((game) =>
+      game.consoles
+        .map((console) => console.toLowerCase())
+        .includes(consoleRequest),
+    );
+
     res.status(200).json({
       status: 'success',
-      data: { games },
+      data: {games: filteredGames},
     });
   } catch (err) {
     console.log(err);
@@ -71,9 +92,7 @@ const updateGame = (req, res) => {
     const idRequest = req.params.id;
     const gameRequest = req.body;
 
-    const indexToUpdate = games.findIndex(
-      (game) => game.id == idRequest
-    );
+    const indexToUpdate = games.findIndex((game) => game.id == idRequest);
 
     if (indexToUpdate == -1) {
       return errorResponse(res, 404, 'Game not found');
@@ -88,7 +107,7 @@ const updateGame = (req, res) => {
       res.status(200).json({
         status: 'success',
         message: 'Game updated successfully',
-        data: { game: games[indexToUpdate] },
+        data: {game: games[indexToUpdate]},
       });
     });
   } catch (err) {
@@ -101,11 +120,9 @@ const updateGame = (req, res) => {
 const patchLike = (req, res) => {
   try {
     const idRequest = req.params.id;
-    const { liked } = req.body;
+    const {liked} = req.body;
 
-    const indexToUpdate = games.findIndex(
-      (game) => game.id == idRequest
-    );
+    const indexToUpdate = games.findIndex((game) => game.id == idRequest);
 
     if (indexToUpdate == -1) {
       return errorResponse(res, 404, 'Game not found');
@@ -117,7 +134,7 @@ const patchLike = (req, res) => {
       res.status(200).json({
         status: 'success',
         message: 'Updated successfully',
-        data: { game: games[indexToUpdate] },
+        data: {game: games[indexToUpdate]},
       });
     });
   } catch (err) {
@@ -131,9 +148,7 @@ const deleteGame = (req, res) => {
   try {
     const idRequest = req.params.id;
 
-    const indexToDelete = games.findIndex(
-      (game) => game.id == idRequest
-    );
+    const indexToDelete = games.findIndex((game) => game.id == idRequest);
 
     if (indexToDelete == -1) {
       return errorResponse(res, 404, 'Game not found');
@@ -145,7 +160,7 @@ const deleteGame = (req, res) => {
       res.status(200).json({
         status: 'success',
         message: 'Game deleted successfully',
-        data: { game: deletedGame },
+        data: {game: deletedGame},
       });
     });
   } catch (err) {
@@ -157,8 +172,9 @@ const deleteGame = (req, res) => {
 // EXPORTS
 module.exports = {
   postGame,
-  getGameByID,
   getAllGames,
+  getGameByID,
+  getGameByConsole,
   updateGame,
   deleteGame,
   patchLike,

@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 // CONFIG
-const seriesFilePath = path.join(__dirname, '../models/series.json');
+const seriesFilePath = '../models/series.json';
 
 const errorResponse = (res, statusCode, message) => {
   return res.status(statusCode).json({
@@ -25,6 +25,19 @@ const postSeries = (req, res) => {
         status: 'success',
         data: { series },
       });
+    });
+  } catch (err) {
+    console.log(err);
+    errorResponse(res, 500, `There was an error: ${err}`);
+  }
+};
+
+// GET  ////////////////////////////////////////////////////////////////
+const getAllseries = (req, res) => {
+  try {
+    res.status(200).json({
+      status: 'success',
+      data: { series },
     });
   } catch (err) {
     console.log(err);
@@ -55,11 +68,17 @@ const getSeriesByID = (req, res) => {
 };
 
 // GET  ////////////////////////////////////////////////////////////////
-const getAllseries = (req, res) => {
+const getSeriesByGenre = (req, res) => {
   try {
+    const genreRequest = req.query.genero.tolowerCase();
+
+    const filteredSeries = series.filter((serie) =>
+      serie.genres.tolowerCase().includes(genreRequest),
+    );
+
     res.status(200).json({
       status: 'success',
-      data: { series },
+      data: {series: filteredSeries},
     });
   } catch (err) {
     console.log(err);
@@ -159,8 +178,9 @@ const deleteSeries = (req, res) => {
 // EXPORTS
 module.exports = {
   postSeries,
-  getSeriesByID,
   getAllseries,
+  getSeriesByID,
+  getSeriesByGenre,
   updateSeries,
   deleteSeries,
   patchLike,
