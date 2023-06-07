@@ -1,0 +1,34 @@
+{
+  "name": "pet-shop",
+  "version": "1.0.0",
+  "description": "exercício de sala de aula para fixação fundamentos de API RESTful.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nearlyerika/on22-b3-s11-api-revisao.git"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "express",
+    "api",
+    "restful"
+  ],
+  "author": "nearlyerika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nearlyerika/on22-b3-s11-api-revisao/issues"
+  },
+  "homepage": "https://github.com/nearlyerika/on22-b3-s11-api-revisao#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
