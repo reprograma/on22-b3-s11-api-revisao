@@ -1,4 +1,4 @@
-const app = require('./src/models/app')
+const app = require('./src/app')
 const PORT = 5151
 
 app.listen(PORT, ()=>{
