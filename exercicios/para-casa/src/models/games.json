@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "title": "Lost Judgment",
+        "launchYear": "2021",
+        "consoles": [
+            "PS4, PS5",
+            "PC",
+            "Xbox One",
+            "Xbox Series S/X"
+        ],
+        "liked": true
+    },
+    {
+        "id": 2,
+        "title": "Flower, Sun and Rain",
+        "launchYear": "2001",
+        "consoles": [
+            "PS2",
+            "Nintendo DS"
+        ],
+        "liked": false
+    },
+    {
+        "id": 3,
+        "title": "Devil May Cry 5",
+        "launchYear": "2019",
+        "consoles": [
+            "PS4",
+            "Xbox One",
+            "PC"
+        ],
+        "liked": true
+    }
+]
