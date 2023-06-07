@@ -6,14 +6,16 @@ const seriesController = require('../controllers/seriesController');
 // ROUTES
 router
   .route('/series')
-//  .post(seriesController.postSeries)
-  .get(seriesController.getAllSeries);
+  .post(seriesController.postSeries)      // 1
+  .get(seriesController.getAllSeries);    // 2
 router
-//  .route('/series/:id')
-//  .get(seriesController.getSeriesByID)
-//  .delete(seriesController.deleteSeries);
-//router.route('/series/:id/liked').patch(seriesController.patchLike);
-//router.route('/series/:id/genre').get(seriesController.getSeriesGenre);
+.route('/series/:id')
+  .get(seriesController.getSeriesByID)    // 3
+  .delete(seriesController.deleteSeries); // 4
+router.route('/series/:id/liked')
+ .patch(seriesController.patchLike);      // 5
+router.route('/series/:id/genre')
+//  .get(seriesController.getSeriesGenre);  // 6
 
 // EXPORTS
 module.exports = router;
