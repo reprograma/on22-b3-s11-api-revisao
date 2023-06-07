@@ -7,12 +7,12 @@ que já conseguimos passar?
 
 | Método |  Descrição|
 | --------- | ----------- |
-| `GET` | /games - Retorna todos os jogos |
-| `GET` | /games/:id - Retornar apenas um jogo específico |
-| `POST` | /games - Cadastrar novo jogo |
-| `PUT` | /games/:id - Atualizar um jogo específico |
-| `DELETE` | /games/:id - Deletar um jogo específico |
-| `PATCH` | /games/:id/liked - Atualizar se gostou ou não do jogo. |
+| `GET` | /games - Retorna todos os jogos | ok
+| `GET` | /games/:id - Retornar apenas um jogo específico | ok
+| `POST` | /games - Cadastrar novo jogo | ok
+| `PUT` | /games/:id - Atualizar um jogo específico | ok
+| `DELETE` | /games/:id - Deletar um jogo específico | ok
+| `PATCH` | /games/:id/liked - Atualizar se gostou ou não do jogo. | ok
 
 ## Series
 
