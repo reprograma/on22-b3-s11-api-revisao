@@ -1,16 +1,1 @@
-[
-    {
-      "id": 1,
-      "nomeFantasia": "Pet Shop 4",
-      "endereco": "Recife, 1273 - Pernambuco",
-      "telefone": "11 98765-43214",
-      "atende": ["caes", "papagaio"]
-    },
-    {
-      "id": 2,
-      "nomeFantasia": "Pet Shop 111111",
-      "endereco": "Recife, 1273 - Pernambuco",
-      "telefone": "11 98765-4321",
-      "atende": ["caes", "papagaio"]
-    }
-  ]
+[{"id":1,"nomeFantasia":"Pet Shop 4","endereco":"Recife, 1273 - Pernambuco","telefone":"11 98765-43214","atende":["caes","papagaio"]},{"id":2,"nomeFantasia":"Pet Shop 111111","endereco":"Recife, 1273 - Pernambuco","telefone":"11 98765-4321","atende":["caes","papagaio"]},{"id":3,"nomeFantasia":"Joy","endereco":"Sarzedo","telefone":25511088,"atende":["Jojoy","Linda","Bonita","Neném"]}]
