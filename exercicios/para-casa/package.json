@@ -1,11 +1,10 @@
 {
-  "name": "para-sala",
+  "name": "para-casa",
   "version": "1.0.0",
-  "description": "- Explicação do exercício: \r ---",
-  "main": "server.js",
+  "description": "- Explicação do exercício: Que tal controlarmos nossos jogos e as fases\r que já conseguimos passar?",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

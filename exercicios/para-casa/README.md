@@ -21,12 +21,12 @@ temporada com uma lista deepisódios.
 
 | Método |  Descrição|
 | --------- | ----------- |
-| `GET` | /series - Retorna todas series|
-| `GET` | /series/genero - Retornar series de um genero específico|
-| `GET` | /series/:id - Retornar apenas uma série específico |
-| `POST` | /series - Cadastrar nova série |
-| `DELETE` | /series/:id - Deletar uma série específica |
-| `PATCH` | /series/:id/liked - Atualizar se gostou ou não da série.
+| `GET` | /series - Retorna todas series| ok
+| `GET` | /series/genero - Retornar series de um genero específico| ok
+| `GET` | /series/:id - Retornar apenas uma série específico | ok
+| `POST` | /series - Cadastrar nova série | ok
+| `DELETE` | /series/:id - Deletar uma série específica |ok
+| `PATCH` | /series/:id/liked - Atualizar se gostou ou não da série. ok
  |
 
 ---
