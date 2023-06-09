@@ -1,3 +1,16 @@
+
+const petsController = require("../controller/petsController"); 
+const express = require("express");
+
+const router = express.Router();
+
+
+router.get("/", petsController.getAllPets)
+router.get("/:id", petsController.getById)
+router.post("/cadastra", petsController.add)
+
+module.exports = router;
+
 const express = require("express") //Importamos o módulo express e criamos um novo objeto de roteador usando express.Router().
 const router = express.Router() //Importamos o controlador petsController que contém as funções de manipulação das rotas.
 const controller = require("../controller/petsController")
@@ -20,4 +33,4 @@ module.exports = router; //Exportamos o objeto de roteador para ser utilizado no
 
 /* Em resumo, esse código define as rotas do aplicativo usando o Router do Express e associa cada rota a uma
 função de controle correspondente no petsController. Essas rotas incluem operações de criação, remoção,
-atualização e recuperação de pets.*/
+atualização e recuperação de pets.*

@@ -1,9 +1,11 @@
-const app = require("./src/app"); //Importamos o aplicativo Express do arquivo "./src/app".
-const port = 1313; //Definimos a porta em que o servidor irá escutar como 1313.
 
-app.listen(port, () => { //Utilizamos o método app.listen() para iniciar o servidor na porta especificada.
-    console.log(`Servidor está rodando na porta ${port}`); //Dentro da função de callback passada para o listen(), exibimos uma mensagem indicando que o servidor está rodando na porta especificada.
+const app = require ("./src/app");
+const port = 1313;
+
+app.listen(port, () => {
+console.log(`Servidor está rodando na porta ${port}`)
 })
+
 
 
 /* Em resumo, esse código inicia o servidor Express na porta 1313 e exibe uma mensagem no console informando
