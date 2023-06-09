@@ -1,16 +1,49 @@
 [
     {
-      "id": 1,
-      "nomeFantasia": "Pet Shop 4",
-      "endereco": "Recife, 1273 - Pernambuco",
-      "telefone": "11 98765-43214",
-      "atende": ["caes", "papagaio"]
+        "id": 2,
+        "nomeFantasia": "Pet Shop 111111",
+        "endereco": "Recife, 1273 - Pernambuco",
+        "telefone": "11 98765-4321",
+        "atende": [
+            "caes",
+            "papagaio"
+        ]
     },
     {
-      "id": 2,
-      "nomeFantasia": "Pet Shop 111111",
-      "endereco": "Recife, 1273 - Pernambuco",
-      "telefone": "11 98765-4321",
-      "atende": ["caes", "papagaio"]
+        "id": 3,
+        "nomeFantasia": "Pet Shop 111111",
+        "endereco": "Recife, 1273 - Pernambuco",
+        "telefone": "11 98765-4321",
+        "atende": [
+            "caes",
+            "papagaio"
+        ]
+    },
+    {
+        "id": 6,
+        "nomeFantasia": "Luana Pet Shop",
+        "endereco": "Rio de janeiro, 1273 - Rio de janeiro",
+        "telefone": "11 98765-43214",
+        "atende": [
+            "gato"
+        ]
+    },
+    {
+        "id": 10,
+        "nomeFantasia": "Agatha Pet Shop",
+        "endereco": "Recife, 1273 - Pernambuco",
+        "telefone": "11 98765-43214",
+        "atende": [
+            "gato"
+        ]
     }
-  ]
+]
+
+
+
+/* O JSON fornecido é uma lista de objetos contendo informações de várias pet shops.
+Essas informações representam diferentes pet shops, cada uma com um ID, nome fantasia, endereço,
+telefone e os tipos de animais que atendem. Espero que esse resumo seja útil para entender as informações
+contidas no JSON fornecido.*/
+
+//Lembrando: não é aceito comentarios no Json, coloquei aqui só como base. Precisa deletar para roda, ok?!
