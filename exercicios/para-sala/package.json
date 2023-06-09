@@ -1,17 +1,34 @@
 {
+<<<<<<< HEAD
+  "name": "para-casa",
+=======
   "name": "para-sala",
+>>>>>>> cdd52a551e29ffed73fa8296247c8289cb46f3f5
   "version": "1.0.0",
   "description": "- Explicação do exercício: \r ---",
   "main": "server.js",
   "scripts": {
+<<<<<<< HEAD
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+      },
+  "keywords": [],
+=======
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
+>>>>>>> cdd52a551e29ffed73fa8296247c8289cb46f3f5
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+<<<<<<< HEAD
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+=======
     "fs": "^0.0.1-security",
+>>>>>>> cdd52a551e29ffed73fa8296247c8289cb46f3f5
     "nodemon": "^2.0.22"
   }
 }
