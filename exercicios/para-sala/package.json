@@ -7,11 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
+<<<<<<< HEAD
+  "keywords": [],
+=======
+>>>>>>> cdd52a551e29ffed73fa8296247c8289cb46f3f5
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+<<<<<<< HEAD
+=======
     "fs": "^0.0.1-security",
+>>>>>>> cdd52a551e29ffed73fa8296247c8289cb46f3f5
     "nodemon": "^2.0.22"
   }
 }
