@@ -11,4 +11,8 @@ module.exports = app; //Exportamos o aplicativo Express para ser utilizado em ou
 
 
 /* Em resumo, esse código configura um servidor HTTP utilizando o Express, define rotas relacionadas a pets
+<<<<<<< HEAD
 e exporta o aplicativo Express para ser utilizado em outros arquivos.*/
+=======
+e exporta o aplicativo Express para ser utilizado em outros arquivos.*/
+>>>>>>> cdd52a551e29ffed73fa8296247c8289cb46f3f5
