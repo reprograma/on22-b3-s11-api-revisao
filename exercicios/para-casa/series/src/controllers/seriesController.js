@@ -6,9 +6,17 @@ const getAllSeries = (_, response) => {
   });
 };
 
-
+const getByGenre = (request, response) => {
+  const genre = request.query.genre;
+  const foundSeries = series.filter((serie) => {
+    return serie.genre.toLocaleLowerCase === genre.toLocaleLowerCase;
+  });
+  return response.status(200).json({
+    data: foundSeries,
+  });
+};
 
 module.exports = {
-  getAllSeries, 
-  
-}
+  getAllSeries,
+  getByGenre,
+};
