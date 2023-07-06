@@ -1,0 +1,17 @@
+{
+  "name": "para-casa",
+  "version": "1.0.0",
+  "description": "## series",
+  "main": "server.js",
+  "scripts": {
+  "start": "nodemon ./server.js"
+  },
+  "author": "Francielly",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

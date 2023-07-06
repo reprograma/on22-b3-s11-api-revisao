@@ -41,9 +41,3 @@
 
 
 
-/* O JSON fornecido é uma lista de objetos contendo informações de várias pet shops.
-Essas informações representam diferentes pet shops, cada uma com um ID, nome fantasia, endereço,
-telefone e os tipos de animais que atendem. Espero que esse resumo seja útil para entender as informações
-contidas no JSON fornecido.*/
-
-//Lembrando: não é aceito comentarios no Json, coloquei aqui só como base. Precisa deletar para roda, ok?!
