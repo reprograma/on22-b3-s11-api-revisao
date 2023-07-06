@@ -1,3 +1,4 @@
+const { request } = require("express");
 const series = require("../models/series.json");
 
 const getAllSeries = (_, response) => {
@@ -16,18 +17,44 @@ const getByGenre = (request, response) => {
   });
 };
 
-const getById = (request, response) => { 
+const getById = (request, response) => {
   const id = request.params.id;
   const foundSerie = series.find((serie) => {
-    return serie.id === Number(id)
-  })
+    return serie.id === Number(id);
+  });
   return response.status(200).json({
-    data: foundSerie
-  })
-}
+    data: foundSerie,
+  });
+};
+
+const deleteSerie = (request, response) => {
+  const id = request.params.id;
+  const filteredSeries = series.filter((serie) => {
+    return serie.id !== Number(id);
+  });
+  return response.status(200).json({
+    data: filteredSeries,
+  });
+};
+
+const updateSeries = (request, response) => {
+  const id = request.params.id;
+  const foundSerie = series.find((serie) => {
+    return serie.id === Number(id);
+  });
+
+  const liked = request.body.liked;
+  foundSerie.liked = liked;
+  
+  return response.status(200).json({
+    data: foundSerie,
+  });
+};
 
 module.exports = {
   getAllSeries,
   getByGenre,
-  getById
+  getById,
+  deleteSerie,
+  updateSeries,
 };
