@@ -45,11 +45,19 @@ const updateSeries = (request, response) => {
 
   const liked = request.body.liked;
   foundSerie.liked = liked;
-  
+
   return response.status(200).json({
     data: foundSerie,
   });
 };
+
+const addSerie = (request, response) => {
+  const payload = request.body
+  series.push(payload)
+  return response.status(201).json({
+    data: series
+  })
+}
 
 module.exports = {
   getAllSeries,
@@ -57,4 +65,5 @@ module.exports = {
   getById,
   deleteSerie,
   updateSeries,
+  addSerie
 };

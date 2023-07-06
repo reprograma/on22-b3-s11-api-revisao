@@ -6,7 +6,7 @@ const router = express.Router()
 router.get("/", seriesController.getAllSeries)
 router.get("/:id", seriesController.getById)
 router.get("/genero", seriesController.getByGenre)
-// router.post("/add", seriesController.addSerie)
+router.post("/add", seriesController.addSerie)
 router.delete("/:id", seriesController.deleteSerie)
 router.patch("/update/:id/liked", seriesController.updateSeries)
 
