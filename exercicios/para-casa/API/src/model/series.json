@@ -1,0 +1,208 @@
+[
+    {
+      "id": 1,
+      "name": "Black Mirror",
+      "genre": "Sci-Fi",
+      "synopsis": "An anthology series exploring the dark side of technology and its impact on society.",
+      "liked": true,
+      "seasons": [
+        {
+          "id": 1,
+          "code": "season01",
+          "episodes": [
+            {
+              "id": 1,
+              "code": "ep01",
+              "name": "The National Anthem",
+              "watched": true
+            },
+            {
+              "id": 2,
+              "code": "ep02",
+              "name": "Fifteen Million Merits",
+              "watched": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "The Office",
+      "genre": "Comedy",
+      "synopsis": "People without a clue working with other people without a clue in an office with a clueless boss",
+      "liked": true,
+      "seasons": [
+        {
+          "id": 1,
+          "code": "season01",
+          "episodes": [
+            {
+              "id": 1,
+              "code": "ep01",
+              "name": "The Pilot",
+              "watched": true
+            },
+            {
+              "id": 2,
+              "code": "ep02",
+              "name": "Diversity Day",
+              "watched": false
+            },
+            {
+              "id": 3,
+              "code": "ep03",
+              "name": "Health Care",
+              "watched": true
+            },
+            {
+              "id": 4,
+              "code": "ep04",
+              "name": "The Alliance",
+              "watched": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "code": "season02",
+          "episodes": [
+            {
+              "id": 1,
+              "code": "ep01",
+              "name": "The Dundies",
+              "watched": false
+            },
+            {
+              "id": 2,
+              "code": "ep02",
+              "name": "Sexual Harassment",
+              "watched": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Breaking Bad",
+      "genre": "Crime",
+      "synopsis": "A high school chemistry teacher turned methamphetamine manufacturer teams up with a former student to build a drug empire.",
+      "liked": true,
+      "seasons": [
+        {
+          "id": 1,
+          "code": "season01",
+          "episodes": [
+            {"id": 1, "code": "ep01", "name": "Pilot", "watched": true},
+            {
+              "id": 2,
+              "code": "ep02",
+              "name": "Cat's in the Bag...",
+              "watched": false
+            },
+            {
+              "id": 3,
+              "code": "ep03",
+              "name": "...And the Bag's in the River",
+              "watched": true
+            },
+            {"id": 4, "code": "ep04", "name": "Cancer Man", "watched": false}
+          ]
+        },
+        {
+          "id": 2,
+          "code": "season02",
+          "episodes": [
+            {
+              "id": 1,
+              "code": "ep01",
+              "name": "Seven Thirty-Seven",
+              "watched": false
+            },
+            {"id": 2, "code": "ep02", "name": "Grilled", "watched": false}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Witcher",
+      "genre": "Fantasy",
+      "synopsis": "Geralt of Rivia, a monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.",
+      "liked": true,
+      "seasons": [
+        {
+          "id": 1,
+          "code": "season01",
+          "episodes": [
+            {
+              "id": 1,
+              "code": "ep01",
+              "name": "The End's Beginning",
+              "watched": true
+            },
+            {
+              "id": 2,
+              "code": "ep02",
+              "name": "Four Marks",
+              "watched": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "The Witcher",
+      "genre": "Fantasy",
+      "synopsis": "Geralt of Rivia, a monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.",
+      "liked": true,
+      "seasons": [
+        {
+          "id": 1,
+          "code": "season01",
+          "episodes": [
+            {
+              "id": 1,
+              "code": "ep01",
+              "name": "The End's Beginning",
+              "watched": true
+            },
+            {
+              "id": 2,
+              "code": "ep02",
+              "name": "Four Marks",
+              "watched": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Narcos",
+      "genre": "Crime",
+      "synopsis": "The rise and fall of the infamous drug lord Pablo Escobar and the Medellín Cartel.",
+      "liked": true,
+      "seasons": [
+        {
+          "id": 1,
+          "code": "season01",
+          "episodes": [
+            {
+              "id": 1,
+              "code": "ep01",
+              "name": "Descenso",
+              "watched": true
+            },
+            {
+              "id": 2,
+              "code": "ep02",
+              "name": "The Sword of Simón Bolívar",
+              "watched": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
