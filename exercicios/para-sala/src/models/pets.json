@@ -1,16 +1,37 @@
 [
-    {
-      "id": 1,
-      "nomeFantasia": "Pet Shop 4",
-      "endereco": "Recife, 1273 - Pernambuco",
-      "telefone": "11 98765-43214",
-      "atende": ["caes", "papagaio"]
-    },
-    {
-      "id": 2,
-      "nomeFantasia": "Pet Shop 111111",
-      "endereco": "Recife, 1273 - Pernambuco",
-      "telefone": "11 98765-4321",
-      "atende": ["caes", "papagaio"]
-    }
+  {
+      "id":1,
+      "nomeFantasia":"Pet Shop 4",
+      "endereco":"Recife, 1273 - Pernambuco",
+      "telefone":"11 98765-43214",
+      "atende":["caes","papagaio"]
+  },
+  {
+      "id":2,
+      "nomeFantasia":"Pet Shop 111111",
+      "endereco":"Recife, 1273 - Pernambuco",
+      "telefone":"81 98765-4321",
+      "atende":["caes","papagaio"]
+  },
+  {
+      "id":3,
+      "nomeFantasia":"guria pet",
+      "endereco":"maranhão, 1273 - Ceará",
+      "telefone":"85 98765-5524",
+      "atende":["caes","gato", "tartaruga"]
+  },
+  {
+      "id":4,
+      "nomeFantasia":"new pet",
+      "endereco":"amaro, 6798 - Acre",
+      "telefone":"22 98265-9214",
+      "atende":["caes","porquinho da india"]
+  },
+  {
+      "id":5,
+      "nomeFantasia":"sisters pets",
+      "endereco":"floriano peixoto, 1144 - Amazonas",
+      "telefone":"43 99265-9288",
+      "atende":["caes","porquinho da india","piriquito"]
+  }
   ]

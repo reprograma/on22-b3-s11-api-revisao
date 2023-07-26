@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Hanna",
-        "genre": "Aventura",
+        "genero": "Aventura",
         "synopsis": "Um suspense bem elaborado e um drama sobre o amadurecimento, HANNA segue a jonada de uma jovem (...)",
         "liked": true,
         "seasons": [
@@ -59,7 +59,7 @@
     {
         "id": 2,
         "name": "The Office",
-        "genre": "Comédia",
+        "genero": "Comédia",
         "synopsis": "Pessoas sem nocao trabalhando com outras pessoas sem nocao num escritorio com um chefe sem nocao",
         "liked": true,
         "seasons": [
@@ -112,5 +112,16 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 3
+    },
+    {
+        "id": 4,
+        "name": "Todo mundo odeia o chris",
+        "genero": "Comédia",
+        "synopsis": "Pessoas sem nocao em uma escola sem nocao",
+        "liked": true,
+        "seasons": 1
     }
 ]
